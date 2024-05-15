@@ -14,10 +14,13 @@ class SinglyLinkedList {
 
     addToHead(val) {
         // Add node of val to head of linked list
-
-        // Your code here 
-
+        const newNode = new SinglyLinkedNode(val, null)
+        this.length++
+        newNode.next = this.head
+        this.head = newNode
+        return this
         // Write your hypothesis on the time complexity of this method here
+
     }
 
     addToTail(val) {
