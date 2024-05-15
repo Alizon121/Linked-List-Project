@@ -88,16 +88,23 @@ class SinglyLinkedList {
 
     peekAtHead() {
         // Return the value of head node
-
-        // Your code here 
-
+        if (!this.head) {
+            return undefined
+        }
+        return this.head.value
         // Write your hypothesis on the time complexity of this method here
     }
 
     print() {
         // Print out the linked list
-
-        // Your code here 
+        if (!this.head) {
+            return
+        }
+        let current = this.head
+        while (current) {
+            console.log(current.value)
+         current = current.next
+        }
 
         // Write your hypothesis on the time complexity of this method here
     }
