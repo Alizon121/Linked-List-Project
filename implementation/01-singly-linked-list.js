@@ -67,20 +67,23 @@ class SinglyLinkedList {
         if(!this.head) return undefined
         
         if(this.head.next === null) {
-            return this.head = null
-        }
+                this.length--
+                return this.head = null
 
-        let current = this.head;
+            }
+            
+            let current = this.head;
+            let previous;
+            
+            while (current.next) {
+                previous = current;
+                current = current.next
+            }
+            previous.next = null
+            this.length--
+        return current
 
-        while (current.next) {
-            current = current.next
-        }
-        // let temp = current.next
-        current = null
-        this.length--
-        // return temp
-
-        // Write your hypothesis on the time complexity of this method here
+        // Write your hypothesis on the time complexity of this method here O(n)
     }
 
     peekAtHead() {
